@@ -1,0 +1,99 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002b226955300 .scope module, "fa_using_ha" "fa_using_ha" 2 1;
+ .timescale 0 0;
+L_000002b2267bbab0 .functor OR 1, L_000002b2267bb810, L_000002b2267bba40, C4<0>, C4<0>;
+v000002b226953100_0 .var "a", 0 0;
+v000002b226953a10_0 .var "b", 0 0;
+v000002b226953ab0_0 .net "c", 0 0, L_000002b2267bbab0;  1 drivers
+v000002b226953b50_0 .net "c1", 0 0, L_000002b2267bb810;  1 drivers
+v000002b226953c90_0 .net "c2", 0 0, L_000002b2267bba40;  1 drivers
+v000002b226953470_0 .var "cin", 0 0;
+v000002b2269533d0_0 .net "s", 0 0, L_000002b2267bb880;  1 drivers
+v000002b226953d30_0 .net "s1", 0 0, L_000002b2267bbb20;  1 drivers
+S_000002b226955490 .scope module, "iha1" "ha" 2 8, 3 1 0, S_000002b226955300;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+L_000002b2267bbb20 .functor XOR 1, v000002b226953100_0, v000002b226953a10_0, C4<0>, C4<0>;
+L_000002b2267bb810 .functor AND 1, v000002b226953100_0, v000002b226953a10_0, C4<1>, C4<1>;
+v000002b2267bbe80_0 .net "a", 0 0, v000002b226953100_0;  1 drivers
+v000002b2267b6b50_0 .net "b", 0 0, v000002b226953a10_0;  1 drivers
+v000002b2269465e0_0 .net "carry", 0 0, L_000002b2267bb810;  alias, 1 drivers
+v000002b226946680_0 .net "sum", 0 0, L_000002b2267bbb20;  alias, 1 drivers
+S_000002b226955620 .scope module, "iha2" "ha" 2 9, 3 1 0, S_000002b226955300;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+L_000002b2267bb880 .functor XOR 1, L_000002b2267bbb20, v000002b226953470_0, C4<0>, C4<0>;
+L_000002b2267bba40 .functor AND 1, L_000002b2267bbb20, v000002b226953470_0, C4<1>, C4<1>;
+v000002b226952e80_0 .net "a", 0 0, L_000002b2267bbb20;  alias, 1 drivers
+v000002b226952f20_0 .net "b", 0 0, v000002b226953470_0;  1 drivers
+v000002b226952fc0_0 .net "carry", 0 0, L_000002b2267bba40;  alias, 1 drivers
+v000002b226953060_0 .net "sum", 0 0, L_000002b2267bb880;  alias, 1 drivers
+    .scope S_000002b226955300;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953a10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953470_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953a10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953a10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953470_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953a10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002b226953100_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 22 "$finish" {0 0 0};
+    %vpi_call 2 23 "$dumpflush" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000002b226955300;
+T_1 ;
+    %vpi_call 2 26 "$monitor", $time, "a=%b b=%b cin=%b sum=%b carry=%b", v000002b226953100_0, v000002b226953a10_0, v000002b226953470_0, v000002b2269533d0_0, v000002b226953ab0_0 {0 0 0};
+    %vpi_call 2 27 "$dumpfile", "decoder.vcd" {0 0 0};
+    %vpi_call 2 28 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002b226955300 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "fa_using_ha.v";
+    "ha.v";
